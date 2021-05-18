@@ -51,7 +51,12 @@ const STARTING_TIME = 5
         value={text}
       />
       <h4>Time remaining: {timeRemaining}</h4>
-      <button onClick={startClock}>Start</button>
+      <button
+        onClick={startClock}
+        disabled={isTimeRunning}
+      >
+        Start
+      </button>
       <h1>Word count: {wordCount}</h1>
     </div>
   )
