@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './App.css';
 
 function App() {
@@ -15,6 +15,14 @@ function App() {
     const wordsArr = text.trim().split(" ")
     return wordsArr.filter(word => word !== "").length
   }
+
+  useEffect(() => {
+    if(timeRemaining > 0) {
+      setTimeout(() => {
+        setTimeRemaining(time => time - 1)
+      }, 1000);
+    }
+  }, [timeRemaining])
 
   return (
     <div>
