@@ -24,7 +24,7 @@ const STARTING_TIME = 5
     setIsTimeRunnin(true)
     setTimeRemaining(STARTING_TIME)
     setText(" ")
-    // setWordCount(0)
+    setWordCount(0)
   }
 
   function endGame() {
@@ -49,6 +49,7 @@ const STARTING_TIME = 5
       <textarea
         onChange={handleChange}
         value={text}
+        disabled={!isTimeRunning}
       />
       <h4>Time remaining: {timeRemaining}</h4>
       <button
