@@ -8,7 +8,12 @@ function App() {
     const {value} = e.target
     setText(value)
   }
-  console.log(text)
+  // console.log(text)
+
+  function calculateWordCount(text) {
+    const wordsArr = text.trim().split(" ")
+    return wordsArr.filter(word => word !== "").length
+  }
 
   return (
     <div>
@@ -18,7 +23,7 @@ function App() {
         value={text}
       />
       <h4>Time remaining: ???</h4>
-      <button>Start</button>
+      <button onClick={() => calculateWordCount(text)}>Start</button>
       <h1>Word count: ???</h1>
     </div>
   )
