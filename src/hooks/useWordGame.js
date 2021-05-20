@@ -21,6 +21,7 @@ function useWordGame(startingTime = 10) {
         setIsTimeRunning(true)
         setTimeRemaining(startingTime)
         setText("")
+        setWordCount(0)
         textBoxRef.current.disabled = false
         textBoxRef.current.focus()
     }
